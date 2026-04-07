@@ -1,1 +1,30 @@
-﻿
+﻿body{
+	font-family:Times New Roman;
+	color:#6600FF;
+	margin: 30px;
+	background-color:#FFFFCC;
+	font-size: 20px;
+}
+.intro{
+	font-weight:bold;
+	color:green;
+	text-align: center;
+}
+table,tr,td{
+	border: 1px solid cyan;
+}
+.muc{
+	font-weight:bold;
+	color:#FF3333;
+}
+.dam{
+	font-weight:bold;
+}
+.vien{
+	border-left: 5px solid #000011;
+}
+.lienlac{
+	background-color:Silver;
+	text-align: center;
+	margin: -30px;
+}

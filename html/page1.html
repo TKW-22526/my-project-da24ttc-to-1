@@ -3,13 +3,16 @@
  <head>
   <title>Thông tin cá nhân</title>
   <meta charset="utf-8">
+  <link rel = "stylesheet" href = "../css/style1.css">
  </head>
  <body>
-  <h1><b>Nguyễn Vũ Duy Hiển</b></h1>
-  <h2><b>Trang thông tin cá nhân</b></h2>
-  <table border="1">
+ <div class="intro">
+  <h1>Nguyễn Vũ Duy Hiển</h1>
+  <h2>Trang thông tin cá nhân</h2>
+  </div>
+  <table>
    <tr>
-    <td><img src="../assets/images/avatar.jpg" alt="avatar" style="width:120px;height:150px"></a></td>
+    <td><img src="../assets/images/avatar.PNG" alt="avatar"></a></td>
     <td colspan="9">
      <br>
      <h3><b>Giới thiệu bản thân</b></h3>
@@ -19,11 +22,13 @@
     </td>
    </tr>
   </table>
-  <h3><b>Thông tin chi tiết</b></h3>
-  <table border="1">
-   <tr>
-    <td><b>Thông tin</b></td>
-    <td colspan="2"><b>Nội dung</b></td>
+  <div class="muc">
+  <h3>Thông tin chi tiết</h3>
+  </div>
+  <table>
+   <tr align="center">
+    <td><span class="dam">Thông tin</span></td>
+    <td colspan="2" ><span class="dam">Nội dung</span></td>
    </tr>
    <tr>
     <td>Họ và tên</td>
@@ -42,20 +47,31 @@
     <td colspan="2">Đại học Trà Vinh</td>
    </tr>
   </table>
-  <h3><b>Sở thích</b></h3>
+  <div class="muc">
+  <h3>Sở thích</h3>
+  </div>
+  <div class="vien">
   <ul>
    <li>Nghe nhạc</li>
    <li>Xem phim</li>
    <li>Chơi game</li>
   </ul>
-  <h3><b>Kỹ năng và mục tiêu</b></h3>
-  <ol:type="1" start="1">
+  </div>
+  <div class="muc">
+  <h3>Kỹ năng và mục tiêu</h3>
+  </div>
+  <ol type="1">
    <li>Biết HTML cơ bản</li>
    <li>Đang học CSS và JavaScript</li>
    <li>Muốn làm website cá nhân</li>
   </ol>
-  <h3><b>Liên hệ</b></h3>
-   <p>Facebook: </p>
-   <p>Email: hientvok222@gamil.com</p>
+  <br>
+  <div class="lienlac">
+  <div class="muc">
+  <h3>Liên hệ</h3>
+  </div>
+   <p><span class="dam">Facebook:</span> Nguyễn Hiển </p>
+   <p><span class="dam">Email:</span> hientvok222@gamil.com</p>
+   </div>
  </body>
 </html>
