@@ -1,0 +1,12 @@
+.product-item{
+    color:green;
+    font-family: 'Times New Roman', Times, serif;
+}
+.product-image{
+    border: 1px solid cyan;
+    width: 275px;
+    display: block;
+}
+.product-info{
+    color: fuchsia;
+}

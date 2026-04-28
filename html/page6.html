@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <title>Thiết kế from đăng nhập</title>
+  <meta charset="utf-8">
+  <link rel = "stylesheet" href = "../css/style6.css">
+ </head>
+ <body>
+   <script>
+    //Thẻ 1 div khung
+    const newDiv = document.createElement("div");
+    newDiv.setAttribute("class","product-item");
+    //Thẻ 2 div gán hình ảnh
+    const productImage = document.createElement("div");
+    productImage.setAttribute("class","product-image");
+    //Thẻ 3 hình ảnh
+    const productImageNode = document.createElement("img");
+    productImageNode.setAttribute("src","../assets/images/anh.jpg");
+    productImage.appendChild(productImageNode);
+    //Thẻ 4 div thông tin
+    const productInfo = document.createElement("div");
+    productInfo.setAttribute("class","product-info");
+    //1-Tạo name
+    const productName = document.createElement("p");
+    const NameText = document.createTextNode("Nước mía");
+    productName.appendChild(NameText);
+    //2-Tạo price
+    const productPrice = document.createElement("p");
+    const Price = document.createTextNode("10.000vnd");
+    productPrice.appendChild(Price);
+    productInfo.appendChild(productPrice);
+    //3-Tạo link
+    const productLink = document.createElement("a");
+    productLink.setAttribute("href","https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_m%C3%ADa");
+    productLink.innerText = "Link ở đây"
+    productInfo.appendChild(productLink);
+    //Gán vào div
+    newDiv.appendChild(productImage);
+    newDiv.appendChild(productName);
+    newDiv.appendChild(productInfo);
+    //Gán body
+    document.body.appendChild(newDiv);
+   </script>
+ </body>
+</html>
