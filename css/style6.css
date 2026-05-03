@@ -1,12 +1,24 @@
-.product-item{
-    color:green;
-    font-family: 'Times New Roman', Times, serif;
+ .list-product {
+    display: flex;       
+    flex-wrap: wrap;    
+    gap: 20px;          
+    padding: 20px;
 }
-.product-image{
-    border: 1px solid cyan;
-    width: 275px;
-    display: block;
+
+.product-item {
+    width: 200px;       
+    border: 1px solid rgb(11, 11, 11);
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
 }
-.product-info{
-    color: fuchsia;
+
+.product-image img {
+    width: 100%;        
+    height: auto;
+}
+
+.product-info p {
+    margin: 5px 0;
+    font-weight: bold;
 }

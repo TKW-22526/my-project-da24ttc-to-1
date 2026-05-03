@@ -6,40 +6,60 @@
   <link rel = "stylesheet" href = "../css/style6.css">
  </head>
  <body>
-   <script>
-    //Thẻ 1 div khung
-    const newDiv = document.createElement("div");
-    newDiv.setAttribute("class","product-item");
-    //Thẻ 2 div gán hình ảnh
-    const productImage = document.createElement("div");
-    productImage.setAttribute("class","product-image");
-    //Thẻ 3 hình ảnh
-    const productImageNode = document.createElement("img");
-    productImageNode.setAttribute("src","../assets/images/anh.jpg");
-    productImage.appendChild(productImageNode);
-    //Thẻ 4 div thông tin
-    const productInfo = document.createElement("div");
-    productInfo.setAttribute("class","product-info");
-    //1-Tạo name
-    const productName = document.createElement("p");
-    const NameText = document.createTextNode("Nước mía");
-    productName.appendChild(NameText);
-    //2-Tạo price
-    const productPrice = document.createElement("p");
-    const Price = document.createTextNode("10.000vnd");
-    productPrice.appendChild(Price);
-    productInfo.appendChild(productPrice);
-    //3-Tạo link
-    const productLink = document.createElement("a");
-    productLink.setAttribute("href","https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_m%C3%ADa");
-    productLink.innerText = "Link ở đây"
-    productInfo.appendChild(productLink);
-    //Gán vào div
-    newDiv.appendChild(productImage);
-    newDiv.appendChild(productName);
-    newDiv.appendChild(productInfo);
-    //Gán body
-    document.body.appendChild(newDiv);
-   </script>
+  <h2 align="center">Menu nước giải khát</h2>
+    
+    <br>
+    
+<button onclick="addProduct('Nước mía', '10.000 VND', '../assets/images/anh.jpg', 'https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_m%C3%ADa')">
+        Thêm nước mía
+    </button>
+
+    <button onclick="addProduct('Nước dừa', '12.000 VND', '../assets/images/dua.jpg', 'https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_d%E1%BB%ABa')">
+        Thêm nước dừa
+    </button>
+
+    <button onclick="addProduct('Nước cam', '8.000 VND', '../assets/images/cam.jpg', 'https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_cam')">
+        Thêm nước cam
+    </button>
+
+
+    <div class="list-product" id="product-container"></div>
+
+    <script>
+        function addProduct(name, price, imgSource, link) {
+            const container = document.getElementById("product-container");
+
+            const productItem = document.createElement("div");
+            productItem.className = "product-item";
+
+            const productImage = document.createElement("div");
+            productImage.className = "product-image";
+            const imgNode = document.createElement("img");
+            imgNode.src = imgSource;
+            productImage.appendChild(imgNode);
+
+            const productInfo = document.createElement("div");
+            productInfo.className = "product-info";
+
+            const productName = document.createElement("p");
+            productName.textContent = name;
+
+            const productPrice = document.createElement("p");
+            productPrice.textContent = price;
+
+            const productLink = document.createElement("a");
+            productLink.href = link;
+            productLink.textContent = "Xem Chi Tiết";
+
+            productInfo.appendChild(productName);
+            productInfo.appendChild(productPrice);
+            productInfo.appendChild(productLink);
+
+            productItem.appendChild(productImage);
+            productItem.appendChild(productInfo);
+
+            container.appendChild(productItem);
+        }
+    </script>
  </body>
 </html>
