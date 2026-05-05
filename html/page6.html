@@ -1,63 +1,30 @@
 <!DOCTYPE html>
 <html lang="vi">
  <head>
-  <title>Thiết kế from đăng nhập</title>
-  <meta charset="utf-8">
-  <link rel = "stylesheet" href = "../css/style6.css">
+  <title>Thiết kế from sản phẩm</title>
+  <!--<link rel = "stylesheet" href = "../css/style6.css">-->
+  <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <script src="../js/lib.js"></script>
  </head>
  <body>
   <h2 align="center">Menu nước giải khát</h2>
-    
     <br>
-    
-
-    <button onclick="addProduct('Nước dừa', '12.000 VND', '../assets/images/dua.jpg', 'https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_d%E1%BB%ABa')">
-        Thêm nước dừa
-    </button>
-
-    <button onclick="addProduct('Nước cam', '8.000 VND', '../assets/images/cam.jpg', 'https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_cam')">
-        Thêm nước cam
-    </button>
+    <div class="container">
+        <div class="product-list row row-cols-2 row-cols-lg-5 row-cols-md-3 g-4" id="product-list">
 
 
-    <div class="list-product" id="product-container"></div>
-
+        </div>
+    </div>
     <script>
-        function addProduct(name, price, imgSource, link) {
-            const container = document.getElementById("product-container");
-
-            const productItem = document.createElement("div");
-            productItem.className = "product-item";
-
-            const productImage = document.createElement("div");
-            productImage.className = "product-image";
-            const imgNode = document.createElement("img");
-            imgNode.src = imgSource;
-            productImage.appendChild(imgNode);
-
-            const productInfo = document.createElement("div");
-            productInfo.className = "product-info";
-
-            const productName = document.createElement("p");
-            productName.textContent = name;
-
-            const productPrice = document.createElement("p");
-            productPrice.textContent = price;
-
-            const productLink = document.createElement("a");
-            productLink.href = link;
-            productLink.textContent = "Xem Chi Tiết";
-
-            productInfo.appendChild(productName);
-            productInfo.appendChild(productPrice);
-            productInfo.appendChild(productLink);
-
-            productItem.appendChild(productImage);
-            productItem.appendChild(productInfo);
-
-            container.appendChild(productItem);
-        }
-        addProduct('Nước mía', '10.000 VND', '../assets/images/anh.jpg', 'https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bc_m%C3%ADa')
+        productList.forEach(function(item){
+            // Truyền từng thuộc tính vào hàm
+            addProduct(item.id,item.name,item.price,item.image,item.productLink)
+        })
     </script>
  </body>
 </html>
