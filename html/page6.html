@@ -14,17 +14,19 @@
  <body>
   <h2 align="center">Menu nước giải khát</h2>
     <br>
-    <div class="container">
-        <div class="product-list row row-cols-2 row-cols-lg-5 row-cols-md-3 g-4" id="product-list">
-
+    <div class = "container">
+        <div class = "product-list  row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3" id = "product-list">
 
         </div>
     </div>
     <script>
-        productList.forEach(function(item){
+        productList.forEach(function(item) {
             // Truyền từng thuộc tính vào hàm
-            addProduct(item.id,item.name,item.price,item.image,item.productLink)
-        })
+            addProduct(item.id, item.name, item.price, item.image, item.productLink);
+        });
+        
+       //showProduct(productList);
+        
     </script>
  </body>
 </html>
