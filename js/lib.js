@@ -50,7 +50,7 @@ function addProduct(id, name, price, image, hyperLink)
     const productLinkText = document.createTextNode("Xem chi tiết");
     productLink.appendChild(productLinkText);
     productLink.setAttribute("href", hyperLink);
-    productLink.setAttribute("class", "btn btn-outline-info btn-sm mt-auto");
+    productLink.setAttribute("class", "btn btn-sm btn-outline-primary w-100");
 
     //gán paragraph 1, 2 và Link vào khung
     productInfo.appendChild(productName);
