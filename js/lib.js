@@ -39,9 +39,7 @@ function addProduct(id, name, price, image, hyperLink)
   
     //Tạo paragraph 2
     const productPrice = document.createElement("p");
-    const formattedPrice = Number(price).toLocaleString("vi-VN") + " đ";
-    productPrice.setAttribute("class", "product-price text-danger fw-bold mb-2");
-    const productPriceText = document.createTextNode(formattedPrice);
+    const productPriceText = document.createTextNode(price);
     productPrice.appendChild(productPriceText);
 
     
@@ -63,6 +61,7 @@ function addProduct(id, name, price, image, hyperLink)
 
     //Gắn product item vào product list
     document.getElementById("product-list").appendChild(productItem);
+    showProduct(productList);
 }
 
 function showProduct(products)
@@ -77,20 +76,23 @@ function showProduct(products)
         productItem.className = 'product-item col-md-3 col-sm-6';
 
         // Sử dụng Template Literal nạp dữ liệu vào
-        productItem.innerHTML = `
-            <div class="product-image ratio ratio-1x1 overflow-hidden">
-                <img src="${item.image}" alt="${item.name}" class="img-fluid object-fit-cover">
-            </div>
-            <div class="product-info p-2 text-center">
-                <p class="product-name mb-1">${item.name}</p>
-                <p class="product-price text-danger fw-bold mb-2">
-                    ${item.price.toLocaleString('vi-VN')} đ
-                </p>
-                <a href="${item.productLink}" class="btn btn-sm btn-outline-primary w-100">
-                    Xem chi tiết
-                </a>
-            </div>
-        `;
+       productItem.innerHTML = `
+    <div class="product-image ratio ratio-1x1 overflow-hidden">
+        <img src="${item.image}" alt="${item.name}" class="img-fluid object-fit-cover">
+    </div>
+    <div class="product-info p-2 text-center">
+        <p class="product-name mb-1">${item.name}</p>
+        <p class="product-price text-danger fw-bold mb-2">
+            ${Number(item.price).toLocaleString('vi-VN')} đ
+        </p>
+        <a href="${item.productLink}" class="btn btn-sm btn-outline-primary w-100 mb-1">
+            Xem chi tiết
+        </a>
+        <button class="btn btn-sm btn-danger w-100" onclick="deleteProduct('${item.id}')">
+            Xóa
+        </button>
+    </div>
+`;
 
         container.appendChild(productItem);
     });
@@ -116,4 +118,15 @@ function addNewProduct() {
     document.getElementById("name").value = "";
     document.getElementById("price").value = "";
     document.getElementById("image").value = "";
+}
+function deleteProduct(id) {
+    // Lọc bỏ sản phẩm có id cần xóa
+    const newList = productList.filter(item => item.id != id);
+
+    // Cập nhật lại mảng
+    productList.length = 0;
+    productList.push(...newList);
+
+    // Render lại
+    showProduct(productList);
 }
