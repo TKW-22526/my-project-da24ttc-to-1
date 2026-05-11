@@ -39,7 +39,9 @@ function addProduct(id, name, price, image, hyperLink)
   
     //Tạo paragraph 2
     const productPrice = document.createElement("p");
-    const productPriceText = document.createTextNode(price);
+    const formattedPrice = Number(price).toLocaleString("vi-VN") + " đ";
+    productPrice.setAttribute("class", "product-price text-danger fw-bold mb-2");
+    const productPriceText = document.createTextNode(formattedPrice);
     productPrice.appendChild(productPriceText);
 
     
@@ -92,4 +94,26 @@ function showProduct(products)
 
         container.appendChild(productItem);
     });
+}
+function addNewProduct() {
+    const name = document.getElementById("name").value;
+    const price = Number(document.getElementById("price").value);
+    const image = document.getElementById("image").value;
+
+    const newProduct = {
+        id: Date.now(), // tạo id tự động
+        name: name,
+        price: price,
+        image: image,
+        productLink: "#"
+    };
+
+    productList.push(newProduct);
+
+    showProduct(productList);
+
+    // reset form
+    document.getElementById("name").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("image").value = "";
 }
